@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SML Development LLC — independent game studio</title>
+<meta name="description" content="SML Development LLC is an independent studio building original games for connected-TV platforms, published under the SMiLe Games label.">
+<style>
+  :root{
+    --ink:#121826; --ink-soft:#1c2436; --teal:#2EC4B6; --orange:#E8871E;
+    --paper:#f7f8fa; --card:#ffffff; --text:#1c2436; --muted:#5b6472; --line:#e3e6eb;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{ --paper:#0d1017; --card:#161b28; --text:#e8ebf1; --muted:#9aa4b5; --line:#232a3a; }
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    font:16px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    color:var(--text); background:var(--paper); -webkit-font-smoothing:antialiased;
+  }
+  a{color:var(--teal);text-decoration:none}
+  a:hover{text-decoration:underline}
+  .wrap{max-width:960px;margin:0 auto;padding:0 24px}
+
+  /* header */
+  header{border-bottom:1px solid var(--line);background:var(--card)}
+  .bar{display:flex;align-items:center;justify-content:space-between;padding:18px 0}
+  .brand{display:flex;align-items:center;gap:12px;font-weight:700;letter-spacing:-.2px;color:var(--text)}
+  .mark{width:34px;height:34px;border-radius:9px;background:var(--ink);position:relative;flex:0 0 auto}
+  .mark::before{content:"";position:absolute;inset:8px;border-radius:50%;
+    background:conic-gradient(from 210deg,var(--teal),var(--orange))}
+  .brand small{display:block;font-weight:500;color:var(--muted);font-size:12px;letter-spacing:.3px}
+  nav a{color:var(--muted);font-size:14px;margin-left:22px}
+
+  /* hero */
+  .hero{background:var(--ink);color:#eef1f6;padding:76px 0 84px;position:relative;overflow:hidden}
+  .hero::after{content:"";position:absolute;right:-120px;top:-120px;width:360px;height:360px;border-radius:50%;
+    background:radial-gradient(circle at 30% 30%,rgba(46,196,182,.35),transparent 60%),
+               radial-gradient(circle at 70% 70%,rgba(232,135,30,.30),transparent 60%);filter:blur(8px)}
+  .hero h1{font-size:clamp(30px,5vw,46px);line-height:1.12;letter-spacing:-.8px;max-width:16ch;position:relative}
+  .hero p{margin-top:20px;font-size:clamp(16px,2.4vw,19px);color:#b8c1d1;max-width:52ch;position:relative}
+  .cta{display:inline-block;margin-top:30px;background:var(--teal);color:#04211d;font-weight:700;
+    padding:13px 24px;border-radius:10px;position:relative}
+  .cta:hover{text-decoration:none;filter:brightness(1.05)}
+
+  /* sections */
+  section{padding:64px 0}
+  .eyebrow{color:var(--teal);font-weight:700;font-size:13px;letter-spacing:1.5px;text-transform:uppercase}
+  h2{font-size:clamp(23px,3.4vw,30px);letter-spacing:-.4px;margin:10px 0 14px}
+  .lead{color:var(--muted);max-width:60ch}
+
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px;margin-top:34px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:24px}
+  .card h3{font-size:19px;letter-spacing:-.2px;display:flex;align-items:center;gap:9px}
+  .dot{width:9px;height:9px;border-radius:50%;flex:0 0 auto}
+  .card p{color:var(--muted);font-size:15px;margin-top:9px}
+  .tag{display:inline-block;margin-top:14px;font-size:12px;font-weight:600;letter-spacing:.4px;
+    color:var(--muted);border:1px solid var(--line);border-radius:20px;padding:4px 11px}
+
+  .contact{background:var(--card);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .contact .row{display:flex;flex-wrap:wrap;gap:8px 40px;margin-top:18px}
+  .contact .row div{min-width:180px}
+  .contact .k{font-size:12px;letter-spacing:1px;text-transform:uppercase;color:var(--muted)}
+  .contact .v{font-size:17px;font-weight:600;margin-top:3px}
+
+  footer{padding:40px 0;color:var(--muted);font-size:13px;text-align:center}
+  footer .brand{justify-content:center;margin-bottom:10px}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap bar">
+    <div class="brand">
+      <span class="mark" aria-hidden="true"></span>
+      <span>SML Development LLC<small>Publisher of SMiLe Games</small></span>
+    </div>
+    <nav>
+      <a href="#games">Games</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<div class="hero">
+  <div class="wrap">
+    <h1>Original games for the living-room screen.</h1>
+    <p>SML Development LLC is an independent studio designing and publishing games for
+       connected-TV platforms. Our titles ship under the <strong>SMiLe Games</strong> label.</p>
+    <a class="cta" href="#contact">Get in touch</a>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <p class="eyebrow">What we do</p>
+    <h2>A small studio, built for the TV.</h2>
+    <p class="lead">We build approachable, well-crafted games designed from the ground up for
+       the remote control and the big screen — starting on Roku, with more platforms ahead.
+       Every title is developed, tested, and certified in-house.</p>
+  </div>
+</section>
+
+<section id="games" style="padding-top:0">
+  <div class="wrap">
+    <p class="eyebrow">Our games</p>
+    <h2>Published under SMiLe Games</h2>
+    <div class="grid">
+      <div class="card">
+        <h3><span class="dot" style="background:var(--teal)"></span>Guessle</h3>
+        <p>A daily word-guessing game — quick, clean, and made for couch play.</p>
+        <span class="tag">Word game · Roku</span>
+      </div>
+      <div class="card">
+        <h3><span class="dot" style="background:var(--orange)"></span>Boomscout</h3>
+        <p>A no-guess, minesweeper-style logic game where every board is solvable by reason alone.</p>
+        <span class="tag">Logic game · Roku</span>
+      </div>
+      <div class="card">
+        <h3><span class="dot" style="background:#8a7ef0"></span>Pebblenaut</h3>
+        <p>A fast, arcade-style asteroids game — the studio's first real-time title.</p>
+        <span class="tag">Arcade · In development</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="contact">
+  <div class="wrap">
+    <p class="eyebrow">Contact</p>
+    <h2>Say hello</h2>
+    <p class="lead">For business, support, or press inquiries, reach the studio directly.</p>
+    <div class="row">
+      <div>
+        <div class="k">Email</div>
+        <div class="v"><a href="mailto:contact@smldevelopment.com">contact@smldevelopment.com</a></div>
+      </div>
+      <div>
+        <div class="k">Studio</div>
+        <div class="v">SML Development LLC</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="brand">
+      <span class="mark" aria-hidden="true"></span>
+      <span>SML Development LLC</span>
+    </div>
+    © 2026 SML Development LLC. All rights reserved. &nbsp;·&nbsp; SMiLe Games is a brand of SML Development LLC.
+  </div>
+</footer>
+
+</body>
+</html>
